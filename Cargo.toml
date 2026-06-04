@@ -1,0 +1,6 @@
+[package]
+name = "ternary-econ"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Economic models with ternary market signals: market analysis, supply/demand, portfolio optimization, risk assessment, market simulation"
