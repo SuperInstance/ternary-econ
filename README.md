@@ -154,6 +154,15 @@ Risk assessment uses tiered thresholds: `Avoid` rejects anything above the speci
 | `ternary-energy` | Capital conservation and thermodynamic analogies |
 | `ternary-logic` | Formal reasoning about market conditions |
 
+## Known Limitations
+
+- **`MarketSimulation` is a toy model.** Price is driven only by net buying/selling pressure with a fixed sensitivity factor (0.1). No order book, no liquidity constraints, no market impact model.
+- **`SupplyDemand::update_price` uses a fixed 1% delta.** No elasticity, no equilibrium finding.
+- **`Asset` fields are continuous `f64` values** (`volatility`, `expected_return`), contradicting the crate's stated principle of avoiding false precision. The ternary constraint applies only to the signal, not to financial parameters.
+- **`PortfolioOptimizer::allocate` can produce concentrated portfolios.** `score.max(0.0)` clips negative scores to zero, potentially allocating weight to very few assets.
+- **No transaction costs, slippage, or position limits** in the simulation.
+- **`sharpe_ratio` uses arithmetic returns**, not log returns.
+
 ## License
 
 MIT
