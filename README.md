@@ -166,3 +166,11 @@ Risk assessment uses tiered thresholds: `Avoid` rejects anything above the speci
 ## License
 
 MIT
+
+## See Also
+- **ternary-market** — related
+- **ternary-auction** — related
+- **ternary-game-theory** — related
+- **ternary-voting** — related
+- **ternary-scoring** — related
+
